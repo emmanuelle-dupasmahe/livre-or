@@ -32,16 +32,16 @@ if (isset($_POST['submit_connexion'])) {
             $_SESSION['user_login'] = $utilisateur['login'];
             
             // 6. Redirection vers la page d'accueil ou le livre d'or
-            header('Location: livre-or.php'); // Ou index.php
+            header('Location: ../livre-or.php'); // Ou index.php
             exit();
 
         } else {
             // 7. Échec de la connexion
             $erreur = "Login ou mot de passe incorrect.";
         }
-    }
+    }                                                                                               
 }
 
-// 8. Inclure la Vue pour l'affichage du formulaire (avec les erreurs si elles existent)
+// 8. Inclure la Vue pour l'affichage du formulaire 
 include('../view/connexion.php'); 
 ?>

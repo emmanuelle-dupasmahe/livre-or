@@ -1,14 +1,18 @@
 <?php
-// Le Modèle pour interagir avec la table 'utilisateurs'
 
+// Le Modèle pour interagir avec la table 'utilisateurs'
 class UserModel {
-    private $bdd; // La connexion à la base de données
+    private $bdd;
 
     public function __construct() {
         // --- CONNEXION À LA BASE DE DONNÉES ---
+        $host = 'localhost'; 
+        $dbname = 'livreor';
+        $username = 'root'; 
+        $password = ''; 
         try {
-            // Remplacez les valeurs (host, dbname, user, password) par les vôtres
-            $this->bdd = new PDO('mysql:host=localhost;dbname=livreor;charset=utf8', 'votre_utilisateur', 'votre_mot_de_passe');
+            
+            $this->bdd = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
             $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (Exception $e) {
             die('Erreur de connexion à la base de données : ' . $e->getMessage());
