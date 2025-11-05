@@ -46,6 +46,7 @@ header {
     background-color: #0b5730;
     border: 2px solid var(--color-accent);
     padding: 10px;
+    border-radius: 15px
 }
 
 h1 {
@@ -86,8 +87,8 @@ footer {
     padding: 15px 20px;
     text-align: center;
     font-size: 0.9em;
-    color: #999; 
-    background-color: #000;
+    color: #066a1c; 
+    background-color: #FFD700;
     margin-top: auto; 
 }
 

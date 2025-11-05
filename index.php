@@ -17,7 +17,7 @@ include('includes/header.php');
 
 <h2>Les Derniers Messages du Livre d'Or</h2>
 
-<p>Ceci est la page d'accueil. Consultez les messages ou connectez-vous pour laisser le vôtre.</p>
+<!--<p>Ceci est la page d'accueil. Consultez les messages ou connectez-vous pour laisser le vôtre.</p>-->
 
 <?php if (empty($commentaires)): ?>
     <p>Aucun commentaire pour le moment. Soyez le premier !</p>
