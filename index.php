@@ -10,7 +10,7 @@ $login_utilisateur = $est_connecte ? $_SESSION['user_login'] : 'Visiteur';
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Accueil - Le Livre d'Or</title>
+    <title>Accueil - The Livre d'Or</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,9 +21,9 @@ $login_utilisateur = $est_connecte ? $_SESSION['user_login'] : 'Visiteur';
     </header>
 
     <main>
-        <p>Ceci est la page d'accueil qui présente le site.</p>
+        <!-- <p>Ceci est la page d'accueil qui présente le site.</p> -->
         
-        <h2>Navigation</h2>
+        <!-- <h2>Navigation</h2> -->
         
         <nav>
             <ul>

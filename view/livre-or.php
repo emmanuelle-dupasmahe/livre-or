@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Le Livre d'Or</title>
+    <title>The Livre d'Or</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>

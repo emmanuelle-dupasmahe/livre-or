@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Inscription - Livre d'Or</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Inscription - The Livre d'Or</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 

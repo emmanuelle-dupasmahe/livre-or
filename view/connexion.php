@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Connexion - Livre d'Or</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Connexion - The Livre d'Or</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
