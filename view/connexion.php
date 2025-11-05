@@ -31,7 +31,7 @@
             <button type="submit" name="submit_connexion">Se connecter</button>
         </form>
 
-        <p>Pas encore de compte ? <a href="inscription.php">Inscrivez-vous ici</a>.</p>
+        <p>Pas encore de compte ? <a href="inscription.php">Inscrivez-vous ici</a></p>
     </main>
 
 </body>
