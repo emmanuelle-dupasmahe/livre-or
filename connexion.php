@@ -1,9 +1,11 @@
 <?php
-// Il est crucial de démarrer la session avant TOUT envoi de HTML
-session_start(); 
+// S'assurer que la session est démarrée avant d'utiliser $_SESSION
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 // 1. Inclure le Modèle
-require_once('../model/user-model.php'); 
+require_once('model/user-model.php'); 
 $userModel = new UserModel();
 
 $erreur = null;
@@ -32,7 +34,7 @@ if (isset($_POST['submit_connexion'])) {
             $_SESSION['user_login'] = $utilisateur['login'];
             
             // 6. Redirection vers la page d'accueil ou le livre d'or
-            header('Location: ../livre-or.php'); // Ou index.php
+            header('Location: livre-or.php'); // Ou index.php
             exit();
 
         } else {
@@ -41,7 +43,37 @@ if (isset($_POST['submit_connexion'])) {
         }
     }                                                                                               
 }
+// On inclut le Header (qui démarre la session, affiche la navigation et ouvre <main>)
+include('includes/header.php'); 
+?>
+    <main>
+        <h2>Connexion</h2>
 
-// 8. Inclure la Vue pour l'affichage du formulaire 
-include('../view/connexion.php'); 
+        <?php
+        // Affichage des messages d'erreur si le contrôleur en a renvoyé
+        if (isset($erreur)) {
+            echo "<p style='color: red;'>$erreur</p>";
+        }
+        ?>
+
+        <form action="connexion.php" method="POST">
+            <div>
+                <label for="login">Login :</label>
+                <input type="text" id="login" name="login" required>
+            </div>
+            
+            <div>
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <button type="submit" name="submit_connexion">Se connecter</button>
+        </form>
+
+        <p>Pas encore de compte ? <a href="inscription.php">Inscrivez-vous ici</a></p>
+    </main>
+
+<?php
+// On inclut le Foooter
+include('includes/footer.php'); 
 ?>

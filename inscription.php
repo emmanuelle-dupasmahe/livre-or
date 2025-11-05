@@ -1,10 +1,7 @@
 <?php
-// On démarre la session (obligatoire pour utiliser $_SESSION)
-session_start(); 
-
-// 1. Inclure le Modèle
+    // 1. Inclure le Modèle
 // Le chemin d'accès au fichier doit être correct par rapport à l'emplacement de ce contrôleur
-require_once('../model/user-model.php'); 
+require_once('model/user-model.php'); 
 $userModel = new UserModel();
 
 // Variable pour stocker les messages d'erreur à passer à la Vue
@@ -51,8 +48,42 @@ if (isset($_POST['submit_inscription'])) {
         }
     }
 }
+// On inclut le Header (qui démarre la session, affiche la navigation et ouvre <main>)
+include('includes/header.php'); 
+?>
+    <main>
+    <h2>Formulaire d'Inscription</h2>
 
-// 7. Inclure la Vue pour l'affichage du formulaire (avec les erreurs si elles existent)
-// Le chemin d'accès au fichier doit être correct par rapport à l'emplacement de ce contrôleur
-include('../view/inscription.php'); 
+        <?php
+        // Affichage des messages d'erreur si le contrôleur en a renvoyé
+        if (isset($erreur)) {
+            echo "<p style='color: red;'>$erreur</p>";
+        }
+        ?>
+
+        <form action="inscription.php" method="POST">
+            <div>
+                <label for="login">Login :</label>
+                <input type="text" id="login" name="login" required>
+            </div>
+            
+            <div>
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <div>
+                <label for="conf_password">Confirmer Mot de passe :</label>
+                <input type="password" id="conf_password" name="conf_password" required>
+            </div>
+            
+            <button type="submit" name="submit_inscription">S'inscrire</button>
+        </form>
+
+        <p>Déjà un compte ? <a href="connexion.php">Connectez-vous ici</a></p>
+    </main>
+
+<?php
+// On inclut le Foooter
+include('includes/footer.php'); 
 ?>

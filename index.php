@@ -1,49 +1,43 @@
 <?php
-session_start();
+// on inclut le Modèle de commentaires
+require_once('model/comment-model.php'); 
+$commentModel = new CommentModel();
 
-// Variable pour savoir si l'utilisateur est connecté
-$est_connecte = isset($_SESSION['user_id']);
-$login_utilisateur = $est_connecte ? $_SESSION['user_login'] : 'Visiteur';
+// on récupére les commentaires
+$commentaires = $commentModel->getAllCommentsWithUser();
+
+// On inclut le Header (qui démarre la session, affiche la navigation et ouvre <main>)
+include('includes/header.php'); 
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Accueil - The Livre d'Or</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<div class="hero">
+    <h1>Bienvenue sur The Livre d'Or !</h1>
+    <p>Bonjour, <?= htmlspecialchars($login_utilisateur) ?></p>
+</div>
 
-    <header>
-        <h1>Bienvenue sur The Livre d'Or !</h1>
-        <p>Bonjour, <?= htmlspecialchars($login_utilisateur) ?>.</p>
-    </header>
+<h2>Les Derniers Messages du Livre d'Or</h2>
 
-    <main>
-        <!-- <p>Ceci est la page d'accueil qui présente le site.</p> -->
-        
-        <!-- <h2>Navigation</h2> -->
-        
-        <nav>
-            <ul>
-                <?php if ($est_connecte): ?>
-                    <li><a href="profil.php">Mon Profil</a></li>
-                    <li><a href="livre-or.php">Voir The Livre d'Or</a></li>
-                    <li><a href="deconnexion.php">Se Déconnecter</a></li>
-                <?php else: ?>
-                    <li><a href="controller/inscription.php">Inscription</a></li>
-                    <li><a href="controller/connexion.php">Connexion</a></li>
-                    <li><a href="livre-or.php">Voir le Livre d'Or</a></li>
-                <?php endif; ?>
-            </ul>
-        </nav>
-        
-    </main>
+<p>Ceci est la page d'accueil. Consultez les messages ou connectez-vous pour laisser le vôtre.</p>
 
-    <footer>
-        <p>&copy; 2025 The Livre d'Or</p>
-    </footer>
+<?php if (empty($commentaires)): ?>
+    <p>Aucun commentaire pour le moment. Soyez le premier !</p>
+<?php else: ?>
+    <section class="commentaires-list">
+        <?php foreach ($commentaires as $com): ?>
+            <article class="commentaire-entry">
+                <p class="meta">
+                    Posté le **<?= date('d/m/Y', strtotime($com['date'])) ?>** par **<?= htmlspecialchars($com['auteur_login']) ?>**
+                </p>
+                <blockquote class="message-text">
+                    <?= nl2br(htmlspecialchars($com['commentaire'])) ?>
+                </blockquote>
+                <hr>
+            </article>
+        <?php endforeach; ?>
+    </section>
+<?php endif; ?>
 
-</body>
-</html>
+<?php
+// on inclut le Footer (qui ferme </main>, </body>, </html>)
+include('includes/footer.php');
+?>
