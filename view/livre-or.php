@@ -23,7 +23,7 @@
                 <?php foreach ($commentaires as $com): ?>
                     <article class="commentaire-entry">
                         <p class="meta">
-                            Posté le **<?= date('d/m/Y', strtotime($com['date'])) ?>** par **<?= htmlspecialchars($com['auteur_login']) ?>**
+                            Posté le <?= date('d/m/Y', strtotime($com['date'])) ?> par <?= htmlspecialchars($com['auteur_login']) ?>
                         </p>
                         <blockquote class="message-text">
                             <?= nl2br(htmlspecialchars($com['commentaire'])) ?>

@@ -16,8 +16,8 @@ $login_utilisateur = $est_connecte ? $_SESSION['user_login'] : 'Visiteur';
 <body>
 
     <header>
-        <h1>Bienvenue sur Le Livre d'Or !</h1>
-        <p>Bonjour, **<?= htmlspecialchars($login_utilisateur) ?>**.</p>
+        <h1>Bienvenue sur The Livre d'Or !</h1>
+        <p>Bonjour, <?= htmlspecialchars($login_utilisateur) ?>.</p>
     </header>
 
     <main>
@@ -29,7 +29,7 @@ $login_utilisateur = $est_connecte ? $_SESSION['user_login'] : 'Visiteur';
             <ul>
                 <?php if ($est_connecte): ?>
                     <li><a href="profil.php">Mon Profil</a></li>
-                    <li><a href="livre-or.php">Voir le Livre d'Or</a></li>
+                    <li><a href="livre-or.php">Voir The Livre d'Or</a></li>
                     <li><a href="deconnexion.php">Se Déconnecter</a></li>
                 <?php else: ?>
                     <li><a href="controller/inscription.php">Inscription</a></li>
@@ -42,7 +42,7 @@ $login_utilisateur = $est_connecte ? $_SESSION['user_login'] : 'Visiteur';
     </main>
 
     <footer>
-        <p>&copy; 2024 Livre d'Or</p>
+        <p>&copy; 2025 The Livre d'Or</p>
     </footer>
 
 </body>
