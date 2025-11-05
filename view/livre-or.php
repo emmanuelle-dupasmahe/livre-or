@@ -11,7 +11,7 @@
         <h2>Livre d'Or - Tous les Commentaires</h2>
 
         <?php if ($est_connecte): ?>
-            <p><a href="commentaire.php" class="button-add">Ajouter un commentaire</a></p>
+            <p><a href="commentaire.php" class="button-action">Ajouter un commentaire</a></p>
         <?php else: ?>
             <p>Connectez-vous pour laisser un message ! <a href="controller/connexion.php">Connexion</a></p>
         <?php endif; ?>
