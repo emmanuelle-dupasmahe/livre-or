@@ -4,7 +4,7 @@ session_start();
 
 // 1. Inclure le Modèle
 // Le chemin d'accès au fichier doit être correct par rapport à l'emplacement de ce contrôleur
-require_once('model/user-model.php'); 
+require_once('../model/user-model.php'); 
 $userModel = new UserModel();
 
 // Variable pour stocker les messages d'erreur à passer à la Vue
@@ -54,5 +54,5 @@ if (isset($_POST['submit_inscription'])) {
 
 // 7. Inclure la Vue pour l'affichage du formulaire (avec les erreurs si elles existent)
 // Le chemin d'accès au fichier doit être correct par rapport à l'emplacement de ce contrôleur
-include('view/inscription.php'); 
+include('../view/inscription.php'); 
 ?>
