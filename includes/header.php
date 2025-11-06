@@ -22,7 +22,7 @@ $base_path = (strpos($_SERVER['PHP_SELF'], 'controller') !== false) ? '/' : '';
         <nav>
             <ul>
                 <li><a href="<?= $base_path ?>index.php">Accueil</a></li>
-                <li><a href="<?= $base_path ?>livre-or.php">Voir le Livre d'Or</a></li>
+                <li><a href="<?= $base_path ?>livre-or.php">The Livre d'Or</a></li>
                 
                 <?php if ($est_connecte): ?>
                     <li><a href="<?= $base_path ?>profil.php">Mon Profil</a></li>
