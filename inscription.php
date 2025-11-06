@@ -1,13 +1,12 @@
 <?php
-    // 1. Inclure le Modèle
-// Le chemin d'accès au fichier doit être correct par rapport à l'emplacement de ce contrôleur
+    // On inclut le modèle
 require_once('model/user-model.php'); 
 $userModel = new UserModel();
 
-// Variable pour stocker les messages d'erreur à passer à la Vue
+// Variable pour stocker les messages d'erreur 
 $erreur = null;
 
-// 2. Vérifier si le formulaire a été soumis
+// On vérifie si le formulaire a été soumis
 if (isset($_POST['submit_inscription'])) {
     
     // Récupération et nettoyage des données du formulaire
@@ -25,21 +24,20 @@ if (isset($_POST['submit_inscription'])) {
         $erreur = "Le mot de passe doit contenir au moins 6 caractères.";
     } else {
         
-        // 3. Vérification de l'existence du login via le Modèle
+        // On vérifie l'existence du login via le modèle
         $user_exists = $userModel->getUserByLogin($login);
 
         if ($user_exists) {
             $erreur = "Ce login est déjà utilisé. Veuillez en choisir un autre.";
         } else {
-            // 4. Hachage du mot de passe pour la sécurité
-            // Utiliser toujours password_hash pour stocker les mots de passe !
+            // Hachage du mot de passe pour la sécurité
             $password_hashed = password_hash($password, PASSWORD_DEFAULT);
             
-            // 5. Insertion dans la base de données via le Modèle
+            // On l'insère dans la base de données via le Modèle
             $inscription_ok = $userModel->registerUser($login, $password_hashed);
 
             if ($inscription_ok) {
-                // 6. Redirection vers la page de connexion
+                // Redirection vers la page de connexion
                 header('Location: connexion.php');
                 exit();
             } else {

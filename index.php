@@ -1,9 +1,9 @@
 <?php
-// on inclut le Modèle de commentaires
+// on inclut le modèle de commentaires
 require_once('model/comment-model.php'); 
 $commentModel = new CommentModel();
 
-// on récupére les commentaires
+// on récupère les commentaires
 $commentaires = $commentModel->getAllCommentsWithUser();
 
 // On inclut le Header (qui démarre la session, affiche la navigation et ouvre <main>)

@@ -28,7 +28,7 @@ if (isset($_POST['submit_commentaire'])) {
         $insertion_ok = $commentModel->addComment($commentaire_text, $id_utilisateur);
 
         if ($insertion_ok) {
-            // Redirection vers le Livre d'Or pour voir le nouveau commentaire
+            // On redirige vers le Livre d'Or pour voir le nouveau commentaire
             header('Location: livre-or.php'); 
             exit();
         } else {

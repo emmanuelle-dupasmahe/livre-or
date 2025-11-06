@@ -7,16 +7,16 @@ $userModel = new UserModel();
 $erreur = null;
 $success = null;
 
-// --- GESTION DE L'ACCÈS (IMPORTANT) ---
+// --- GESTION DE L'ACCÈS ---
 if (!isset($_SESSION['user_id'])) {
     // Si l'utilisateur n'est pas connecté, le rediriger
     header('Location: controller/connexion.php'); 
     exit();
 }
 
-// Récupérer l'ID de l'utilisateur connecté
+// On récupère l'ID de l'utilisateur connecté
 $user_id = $_SESSION['user_id'];
-// Récupérer les données de l'utilisateur (utile pour afficher le login actuel)
+// On récupère les données de l'utilisateur 
 $utilisateur = $userModel->getUserById($user_id);
 
 // --- LOGIQUE DE MODIFICATION ---
@@ -27,7 +27,7 @@ if (isset($_POST['submit_profil'])) {
         $new_login = trim($_POST['new_login']);
         
         if ($new_login !== $utilisateur['login']) {
-            // Vérifie si le nouveau login n'est pas déjà pris
+            // On vérifie si le nouveau login n'est pas déjà pris
             $login_exists = $userModel->getUserByLogin($new_login);
             
             if ($login_exists) {

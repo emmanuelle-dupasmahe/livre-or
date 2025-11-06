@@ -39,7 +39,7 @@ class UserModel {
         return $requete->execute([$login, $password_hashed]);
     }
 
-/**
+    /**
      * Met à jour le login d'un utilisateur.
      */
     public function updateLogin($id, $new_login) {
