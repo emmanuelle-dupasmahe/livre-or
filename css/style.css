@@ -133,7 +133,7 @@ textarea:focus {
 
 button[type="submit"] {
     background-color: var(--color-accent);
-    color: var(--color-background); 
+    color: #025302;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
