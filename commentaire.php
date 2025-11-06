@@ -2,10 +2,9 @@
 <?php
 session_start();
 
-// --- VÉRIFICATION DE LA CONNEXION (CRUCIAL) ---
+// --- VÉRIFICATION DE LA CONNEXION ---
 if (!isset($_SESSION['user_id'])) {
     // Si l'utilisateur n'est pas connecté, le rediriger vers la page de connexion
-    // Assurez-vous que le chemin est correct selon votre structure
     header('Location: controller/connexion.php'); 
     exit();
 }
@@ -26,7 +25,7 @@ if (isset($_POST['submit_commentaire'])) {
         $erreur = "Le champ commentaire ne peut pas être vide.";
     } else {
         
-        // Appel du Modèle pour insérer le commentaire
+        // on appelle le modèle pour insérer le commentaire
         $insertion_ok = $commentModel->addComment($commentaire_text, $id_utilisateur);
 
         if ($insertion_ok) {
