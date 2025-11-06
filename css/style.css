@@ -36,7 +36,8 @@ header {
     width: 70%;
     text-align: center;
     padding: 20px;
-    background-color: #0b5730;
+    /*background-color: #0b5730;*/
+    background-color: #025302;
     border-bottom: 3px solid var(--color-accent);
     border-radius: 15px; 
     margin-bottom: 30px;
