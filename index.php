@@ -17,7 +17,6 @@ include('includes/header.php');
 
 <h2>Les Derniers Messages du Livre d'Or</h2>
 
-<!--<p>Ceci est la page d'accueil. Consultez les messages ou connectez-vous pour laisser le vôtre.</p>-->
 
 <?php if (empty($commentaires)): ?>
     <p>Aucun commentaire pour le moment. Soyez le premier !</p>
@@ -26,12 +25,13 @@ include('includes/header.php');
         <?php foreach ($commentaires as $com): ?>
             <article class="commentaire-entry">
                 <p class="meta">
-                    Posté le **<?= date('d/m/Y', strtotime($com['date'])) ?>** par **<?= htmlspecialchars($com['auteur_login']) ?>**
+                    Posté le <?= date('d/m/Y', strtotime($com['date'])) ?> par <?= htmlspecialchars($com['auteur_login']) ?>
                 </p>
                 <blockquote class="message-text">
                     <?= nl2br(htmlspecialchars($com['commentaire'])) ?>
                 </blockquote>
-                <hr>
+                
+
             </article>
         <?php endforeach; ?>
     </section>

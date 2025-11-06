@@ -46,7 +46,7 @@ header {
 
 .hero{
     width: 70%;
-    background-color: #0b5730;
+    background-color: #025302;
     border: 2px solid var(--color-accent);
     padding: 10px;
     border-radius: 15px
@@ -76,9 +76,7 @@ main {
     max-width: 800px;
     padding: 40px;
     margin: 30px auto;
-    /* background-color: #0c7235; 
-    background: #1b331b;
-    background: linear-gradient(181deg,rgba(27, 51, 27, 1) 32%, rgba(67, 120, 88, 1) 100%);*/
+
     background: #184d18;
     background: linear-gradient(181deg, rgba(24, 77, 24, 1) 32%, rgba(67, 120, 88, 1) 100%);
 
@@ -192,7 +190,8 @@ main a:hover {
     padding: 15px;
     border: 1px solid var(--color-border);
     border-left: 5px solid var(--color-accent); /* Bande dorée sur le côté */
-    background-color: #333;
+    border-right: 5px solid var(--color-accent); /* Bande dorée sur le côté */
+    background-color: #012603;
     border-radius: 8px;
 }
 

@@ -36,7 +36,7 @@ include('includes/header.php');
                         <blockquote class="message-text">
                             <?= nl2br(htmlspecialchars($com['commentaire'])) ?>
                         </blockquote>
-                        <hr>
+                        
                     </article>
                 <?php endforeach; ?>
             </section>
