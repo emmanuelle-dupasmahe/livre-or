@@ -148,6 +148,19 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: var(--color-accent-light);
 }
+.note-profil {
+    font-size: 0.8em; 
+    font-weight: normal;
+    color: #AAAAAA; 
+    margin-left: 10px; 
+    display: inline-block; 
+}
+
+form h3 {
+    display: flex; 
+    align-items: baseline; 
+    margin-bottom: 10px; 
+}
 
 /* ==================================== */
 /* NAVIGATION ET LIENS */
@@ -214,7 +227,7 @@ main a:hover {
 
 .button-action:hover {
     background-color: var(--color-accent-light);
-    color: var(--color-background);
+    color: #025302;
     transform: translateY(-2px); /* Petit effet de soulèvement au survol */
 }
 
@@ -226,7 +239,7 @@ main a:hover {
 
 .meta {
     font-size: 0.9em;
-    color: #aaa; /* Gris clair pour les métadonnées */
+    color: var(--color-accent-light); 
     margin-bottom: 10px;
 }
 

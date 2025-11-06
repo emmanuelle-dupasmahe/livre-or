@@ -22,12 +22,12 @@ $utilisateur = $userModel->getUserById($user_id);
 // --- LOGIQUE DE MODIFICATION ---
 if (isset($_POST['submit_profil'])) {
     
-    // 1. GESTION DE LA MODIFICATION DU LOGIN
+    // MODIFICATION DU LOGIN
     if (!empty($_POST['new_login'])) {
         $new_login = trim($_POST['new_login']);
         
         if ($new_login !== $utilisateur['login']) {
-            // Vérifier si le nouveau login n'est pas déjà pris
+            // Vérifie si le nouveau login n'est pas déjà pris
             $login_exists = $userModel->getUserByLogin($new_login);
             
             if ($login_exists) {
@@ -45,7 +45,7 @@ if (isset($_POST['submit_profil'])) {
         }
     }
     
-    // 2. GESTION DE LA MODIFICATION DU MOT DE PASSE
+    // MODIFICATION DU MOT DE PASSE
     $password = $_POST['new_password'];
     $conf_password = $_POST['conf_password'];
     
@@ -64,7 +64,7 @@ if (isset($_POST['submit_profil'])) {
             }
         }
     } 
-    // Optionnel : Gérer le cas où un seul champ de mot de passe est rempli
+    // Gère le cas où un seul champ de mot de passe est rempli
     elseif ((!empty($password) && empty($conf_password)) || (empty($password) && !empty($conf_password))) {
         $erreur = ($erreur ? $erreur . "<br>" : "") . "Veuillez remplir les deux champs de mot de passe si vous souhaitez le modifier.";
     }
@@ -97,7 +97,9 @@ include('includes/header.php');
                        value="<?= htmlspecialchars($utilisateur['login']) ?>" required>
             </div>
             
-            <h3>Modifier le Mot de Passe (Laissez vide si vous ne voulez pas le changer)</h3>
+            <h3>Modifier le Mot de Passe
+            <span class="note-profil">(Laissez vide si vous ne voulez pas le changer)</span>
+            </h3>
             <div>
                 <label for="new_password">Nouveau Mot de passe :</label>
                 <input type="password" id="new_password" name="new_password">
