@@ -16,7 +16,7 @@ include('includes/header.php');
 
 
     <main>
-        <h2>The Livre d'Or - Tous les Commentaires</h2>
+        <h2>The Livre d'Or</h2>
 
         <?php if ($est_connecte): ?>
             <p><a href="commentaire.php" class="button-action">Ajouter un commentaire</a></p>

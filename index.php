@@ -15,7 +15,7 @@ include('includes/header.php');
     <p>Bonjour, <?= htmlspecialchars($login_utilisateur) ?></p>
 </div>
 
-<h2>Les Derniers Messages du Livre d'Or</h2>
+<h2>Les Derniers Messages</h2>
 
 
 <?php if (empty($commentaires)): ?>

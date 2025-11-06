@@ -36,7 +36,6 @@ header {
     width: 70%;
     text-align: center;
     padding: 20px;
-    /*background-color: #0b5730;*/
     background-color: #025302;
     border-bottom: 3px solid var(--color-accent);
     border-radius: 15px; 
@@ -46,8 +45,10 @@ header {
 
 .hero{
     width: 70%;
+    text-align: center;
     background-color: #025302;
-    border: 2px solid var(--color-accent);
+    border-bottom: 3px solid var(--color-accent);
+    /*border: 2px solid var(--color-accent);*/
     padding: 10px;
     border-radius: 15px
 }
@@ -183,7 +184,7 @@ main a:hover {
 }
 
 /* ==================================== */
-/* STYLE DE THE LIVRE D'OR (les commentaires) */
+/* STYLE THE LIVRE D'OR (les commentaires) */
 /* ==================================== */
 .commentaire-entry {
     margin-bottom: 25px;
@@ -191,14 +192,14 @@ main a:hover {
     border: 1px solid var(--color-border);
     border-left: 5px solid var(--color-accent); /* Bande dorée sur le côté */
     border-right: 5px solid var(--color-accent); /* Bande dorée sur le côté */
-    background-color: #012603;
+    background-color: #014303;
     border-radius: 8px;
 }
 
 .button-action {
     display: inline-block;
     background-color: var(--color-accent); /* Utilise la couleur dorée */
-    color: var(--color-background); /* Texte sombre sur le doré */
+    color: #025302;
     padding: 12px 25px;
     margin: 15px 0 30px 0;
     border: 2px solid var(--color-accent-light);
