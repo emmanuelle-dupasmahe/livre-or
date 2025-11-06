@@ -64,7 +64,7 @@ h2 {
     color: var(--color-accent);
     margin-top: 20px;
     margin-bottom: 15px;
-    border-bottom: 1px solid var(--color-border);
+    /*border-bottom: 1px solid var(--color-border);*/
     padding-bottom: 5px;
 }
 
@@ -198,7 +198,7 @@ main a:hover {
 .button-action {
     display: inline-block;
     background-color: var(--color-accent); /* Utilise la couleur dorée */
-    color: var(--color-background) !important; /* Texte sombre sur le doré */
+    color: var(--color-background); /* Texte sombre sur le doré */
     padding: 12px 25px;
     margin: 15px 0 30px 0;
     border: 2px solid var(--color-accent-light);
@@ -206,14 +206,14 @@ main a:hover {
     font-size: 1.1em;
     font-weight: bold;
     text-transform: uppercase;
-    text-decoration: none !important; /* Retire le soulignement */
+    text-decoration: none; /* Retire le soulignement */
     transition: background-color 0.3s, transform 0.2s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .button-action:hover {
     background-color: var(--color-accent-light);
-    color: var(--color-background) !important;
+    color: var(--color-background);
     transform: translateY(-2px); /* Petit effet de soulèvement au survol */
 }
 
