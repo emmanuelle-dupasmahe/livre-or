@@ -90,14 +90,14 @@ include('includes/header.php');
         ?>
 
         <form action="profil.php" method="POST">
-            <h3>Modifier le Login</h3>
+            <h3>Modifier votre Login <span class="note-profil">(Si vous voulez le changer)</span></h3>
             <div>
                 <label for="new_login">Nouveau Login :</label>
                 <input type="text" id="new_login" name="new_login" 
                        value="<?= htmlspecialchars($utilisateur['login']) ?>" required>
             </div>
             
-            <h3>Modifier le Mot de Passe
+            <h3>Modifier votre Mot de Passe
             <span class="note-profil">(Laissez vide si vous ne voulez pas le changer)</span>
             </h3>
             <div>
