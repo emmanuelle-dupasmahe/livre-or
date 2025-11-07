@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 06, 2025 at 10:10 AM
+-- Generation Time: Nov 07, 2025 at 10:06 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -40,7 +40,8 @@ CREATE TABLE `commentaires` (
 
 INSERT INTO `commentaires` (`id`, `commentaire`, `id_utilisateur`, `date`) VALUES
 (5, 'Merci pour ce magnifique livre d\'or ;)', 5, '2025-11-05 15:42:03'),
-(6, 'Ce livre d\'or est vraiment magnifique !', 4, '2025-11-06 10:08:07');
+(6, 'Ce livre d\'or est vraiment magnifique !', 4, '2025-11-06 10:08:07'),
+(7, 'Ce vert Lacoste est une réussite !', 3, '2025-11-06 10:33:13');
 
 -- --------------------------------------------------------
 
@@ -61,7 +62,7 @@ CREATE TABLE `utilisateurs` (
 INSERT INTO `utilisateurs` (`id`, `login`, `password`) VALUES
 (1, 'Emma', '$2y$10$Xwc2q.kvwr1RNKHLsDG6uuDy.84rbD/uWoBCcQYol3hZxGmmgGsv.'),
 (2, 'Emmanuelle', '$2y$10$Qiyz4dYZBP1Wk0VN4FXds.ttPLv2xX7.JcV5j790F0JXzRDcvyIz2'),
-(3, 'Mathilda', '$2y$10$SLbjTqCa3MfXO2RH34AGweBqzVa32sD6ijyMkHua/ZSY/bNV8//IK'),
+(3, 'Mathilde', '$2y$10$J5i2xnNzqcVwGFfyBVQa1.IH6EY5g47.Ltb/AMkd8zC7y8XOd/TUO'),
 (4, 'Patoche', '$2y$10$LyO6AM0WxpzLCCobyiD0oeSKvzyPWqAM2NJG43b2Zgn63TcS1JMae'),
 (5, 'Pascal', '$2y$10$PMdoTuvjFfJ1VCe7XcPSgem9u1b8KN6IKhNiTIElNZsJbbbmQumwW');
 
@@ -89,7 +90,7 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT for table `commentaires`
 --
 ALTER TABLE `commentaires`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `utilisateurs`
