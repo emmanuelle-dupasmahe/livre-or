@@ -119,7 +119,7 @@ include('includes/header.php');
         </form>
 
         <section id="mes-commentaires">
-            <h2>Mes Derniers Commentaires (<?= count($commentaires_utilisateur) ?>)</h2>
+            <h3>Mes Derniers Commentaires (<?= count($commentaires_utilisateur) ?>)</h3>
 
             <?php if (empty($commentaires_utilisateur)): ?>
                 <p>Vous n'avez pas encore posté de commentaire.</p>

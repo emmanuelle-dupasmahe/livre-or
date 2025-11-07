@@ -134,7 +134,7 @@ textarea:focus {
 }
 
 button[type="submit"] {
-    background-color: var(--color-accent-light);;
+    background-color: var(--color-accent-light);
     color: #025302;
     padding: 10px 20px;
     border: none;
@@ -144,10 +144,14 @@ button[type="submit"] {
     margin-bottom: 25px;
     border-radius: 4px;
     transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 button[type="submit"]:hover {
-    background-color: var(--color-accent);
+    color: var(--color-accent-light);
+    background-color: #025302;
+    border: 1px solid var(--color-accent-light);
+    transform: translateY(-2px);
 }
 .note-profil {
     font-size: 0.8em; 
@@ -212,7 +216,7 @@ main a:hover {
 
 .button-action {
     display: inline-block;
-    background-color: var(--color-accent); /* Utilise la couleur dorée */
+    background-color: var(--color-accent-light); /* Utilise la couleur dorée */
     color: #025302;
     padding: 12px 25px;
     margin: 15px 0 30px 0;
@@ -227,8 +231,9 @@ main a:hover {
 }
 
 .button-action:hover {
-    background-color: var(--color-accent-light);
-    color: #025302;
+    background-color: #025302;
+    color: var(--color-accent-light);
+    border: 1px solid var(--color-accent-light);
     transform: translateY(-2px); /* Petit effet de soulèvement au survol */
 }
 
