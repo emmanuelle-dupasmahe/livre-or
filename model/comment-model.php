@@ -56,4 +56,24 @@ class CommentModel {
         // On retourne tous les résultats sous forme de tableau associatif
         return $requete->fetchAll(PDO::FETCH_ASSOC); 
     }
+
+
+public function getCommentsByUserId($user_id) {
+    $requete = $this->bdd->prepare("
+        SELECT 
+            commentaire, 
+            date 
+        FROM 
+            commentaires
+        WHERE 
+            id_utilisateur = ?
+        ORDER BY 
+            date DESC
+    ");
+    $requete->execute([$user_id]);
+    // On retourne tous les résultats sous forme de tableau associatif
+    return $requete->fetchAll(PDO::FETCH_ASSOC); 
+}
+
+
 }

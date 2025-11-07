@@ -25,7 +25,7 @@ include('includes/header.php');
         <?php foreach ($commentaires as $com): ?>
             <article class="commentaire-entry">
                 <p class="meta">
-                    🐊 Posté le <?= date('d/m/Y', strtotime($com['date'])) ?> par <?= htmlspecialchars($com['auteur_login']) ?>
+                    <span style="font-size: 200%;">🐊</span> Posté le <?= date('d/m/Y', strtotime($com['date'])) ?> par <?= htmlspecialchars($com['auteur_login']) ?>
                 </p>
                 <blockquote class="message-text">
                     <?= nl2br(htmlspecialchars($com['commentaire'])) ?>
