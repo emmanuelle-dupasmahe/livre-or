@@ -123,6 +123,7 @@ include('includes/header.php');
 
             <?php if (empty($commentaires_utilisateur)): ?>
                 <p>Vous n'avez pas encore posté de commentaire.</p>
+                <br>
             <?php else: ?>
                 <?php foreach ($commentaires_utilisateur as $commentaire): ?>
                     <article class="commentaire-profil">
