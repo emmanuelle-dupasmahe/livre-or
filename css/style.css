@@ -147,7 +147,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: var(--color-accent-light);
+    background-color: var(--color-accent);
 }
 .note-profil {
     font-size: 0.8em; 
