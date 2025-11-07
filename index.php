@@ -11,7 +11,7 @@ include('includes/header.php');
 ?>
 
 <div class="hero">
-    <h1>Bienvenue sur The Livre d'Or !</h1>
+    <h1>Bienvenue sur 📒 The Livre d'Or !</h1>
     <p>Bonjour, <?= htmlspecialchars($login_utilisateur) ?></p>
 </div>
 

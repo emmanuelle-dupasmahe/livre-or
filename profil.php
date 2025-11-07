@@ -1,8 +1,11 @@
 <?php
 session_start();
 // Le contrôleur pour la page de profil
-require_once('model/user-model.php'); 
+require_once('model/user-model.php');
+require_once('model/comment-model.php');
+
 $userModel = new UserModel();
+$commentModel = new CommentModel();
 
 $erreur = null;
 $success = null;
@@ -16,8 +19,10 @@ if (!isset($_SESSION['user_id'])) {
 
 // On récupère l'ID de l'utilisateur connecté
 $user_id = $_SESSION['user_id'];
-// On récupère les données de l'utilisateur 
+// On récupère les données de l'utilisateur et ses commentaires
 $utilisateur = $userModel->getUserById($user_id);
+
+$commentaires_utilisateur = $commentModel->getCommentsByUserId($user_id);
 
 // --- LOGIQUE DE MODIFICATION ---
 if (isset($_POST['submit_profil'])) {
@@ -76,7 +81,7 @@ include('includes/header.php');
 ?>
 
     <main>
-        <h2>Mon Profil</h2>
+        <h2>🙂 Mon Profil</h2>
         <p>Connecté en tant que : <strong><?= htmlspecialchars($utilisateur['login']) ?></strong></p>
 
         <?php
@@ -112,6 +117,27 @@ include('includes/header.php');
             
             <button type="submit" name="submit_profil">Mettre à jour le Profil</button>
         </form>
+
+        <section id="mes-commentaires">
+            <h2>Mes Derniers Commentaires (<?= count($commentaires_utilisateur) ?>)</h2>
+
+            <?php if (empty($commentaires_utilisateur)): ?>
+                <p>Vous n'avez pas encore posté de commentaire.</p>
+            <?php else: ?>
+                <?php foreach ($commentaires_utilisateur as $commentaire): ?>
+                    <article class="commentaire-profil">
+                        <p class="meta">
+                            Posté le <?= date('d/m/Y à H:i', strtotime($commentaire['date'])) ?>
+                        </p>
+                        <p class="contenu">
+                            <?= nl2br(htmlspecialchars($commentaire['commentaire'])) ?>
+                        </p>
+                        <br>
+                    </article>
+                     <?php endforeach; ?>
+            <?php endif; ?>
+        </section>
+
 
         <p><a href="index.php">Retour à l'accueil</a></p>
     </main>
